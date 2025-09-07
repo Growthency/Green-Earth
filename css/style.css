@@ -1,0 +1,155 @@
+        :root {
+            --brand: #15803D !important;
+            --brand-2: #15803D !important;
+            --mint: #e8f6ee;
+            --ink: #0f172a;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        /* Figma-like category styles (no @apply) */
+        .cat-btn {
+            width: 100%;
+            text-align: left;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            border: 1px solid transparent;
+        }
+
+        .cat-btn:hover {
+            background: #ecfdf5;
+        }
+
+        .cat-btn-active {
+            background: var(--brand-2);
+            color: #fff;
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
+            background-size: 400% 100%;
+            animation: shimmer 1.3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 100% 0
+            }
+
+            100% {
+                background-position: -100% 0
+            }
+        }
+
+        .bg-white\/90 {
+            background-color: #15803D;
+        }
+
+        img.custom-img {
+            margin-top: 3.1rem;
+            margin-left: 5rem;
+            width: 25rem;
+        }
+
+        .relative {
+            height: 383px;
+        }
+
+        .py-20 {
+            padding-top: 8rem !important;
+            padding-bottom: 5rem;
+        }
+
+        .custom-text {
+            margin-bottom: 1rem;
+        }
+
+        .custom-btn {
+            border-radius: 25px;
+            padding: 12px 10px;
+            color: #15803D !important;
+            font-weight: bold;
+        }
+
+        .max-w-6xl {
+            max-width: 104rem !important;
+        }
+
+        .modal-button {
+            text-align: right;
+        }
+
+        button#modalClose {
+            background: #e5e7eb;
+            padding: 10px 25px;
+            border-radius: 10px;
+        }
+
+        .cat-btn-active {
+            background: var(--brand-2);
+            color: #000000;
+        }
+
+        .head-text {
+            text-align: center;
+            font-size: 2rem !important;
+            color: #1F2937 !important;
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit;
+            background-color: #F0FDF4;
+        }
+
+        section#about {
+            background-color: #F0FDF4;
+        }
+
+        .amount-text {
+            font-size: 2rem !important;
+        }
+
+        .impact-text {
+            font-size: 1rem !important;
+            margin-top: 1rem !important;
+        }
+
+        form.max-w-lg.mx-auto.space-y-3 {
+            background-color: #15803D !important;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2.text-center.font-semibold.mb-6.head-text {
+            color: #fff !important;
+        }
+
+        section#donate {
+            background-color: #166534;
+        }
+
+        footer.text-center.text-xs.text-slate-500.py-6.border-t {
+            background-color: #14532D;
+            border-top: none !important;
+            color: #fff !important;
+            font-size: 1rem;
+        }
+
+        li.flex.items-center.justify-between.border.rounded.px-2.py-1 {
+            background-color: #F0FDF4 !important;
+        }
+
+        .bg-\[var\(--mint\)\].border.border-slate-200.rounded-lg.p-4.shadow-sm {
+            background-color: white !important;
+        }
+
+        .cat-btn-active {
+            color: #000000 !important;
+        }
+
+        img.hidden.sm\:block.absolute.-left-10.top-1\/2.-translate-y-1\/2.w-32.md\:w-44.lg\:w-56.xl\:w-64.h-auto.select-none.pointer-events-none Specificity: (0, 13, 1) {
+            margin-top: 6.3rem;
+        }
