@@ -19,10 +19,22 @@
 }
 
 /* 3. Medium devices (tablets, 768px and up) */
-@media screen and (min-width: 768px) and (max-width: 992px) {}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    img.custom-img {
+        margin-top: 5.8rem !important;
+        margin-left: -1rem !important;
+        width: 40%;
+    }
+}
 
 /* 4. Large devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) and (max-width: 1192px) {}
+@media screen and (min-width: 992px) and (max-width: 1192px) {
+    img.custom-img {
+        margin-top: 5.8rem !important;
+        margin-left: -1rem !important;
+        width: 40%;
+    }
+}
 
 /* 5. Extra large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
