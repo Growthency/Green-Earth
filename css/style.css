@@ -9,7 +9,6 @@
             scroll-behavior: smooth
         }
 
-        /* Figma-like category styles (no @apply) */
         .cat-btn {
             width: 100%;
             text-align: left;
@@ -33,24 +32,15 @@
             animation: shimmer 1.3s infinite;
         }
 
-        @keyframes shimmer {
-            0% {
-                background-position: 100% 0
-            }
 
-            100% {
-                background-position: -100% 0
-            }
-        }
 
         .bg-white\/90 {
             background-color: #15803D;
         }
 
         img.custom-img {
-            margin-top: 3.1rem;
+            margin-top: 6.3rem;
             margin-left: 5rem;
-            width: 25rem;
         }
 
         .relative {
@@ -68,9 +58,8 @@
 
         .custom-btn {
             border-radius: 25px;
-            padding: 12px 10px;
+            padding: 12px 20px;
             color: #15803D !important;
-            font-weight: bold;
         }
 
         .max-w-6xl {
