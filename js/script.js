@@ -13,11 +13,11 @@ const modal = document.getElementById('modal');
 const modalTitle = document.getElementById('modalTitle');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
-const modalAddBtn = document.getElementById('modalAddBtn');
+// ❌ modalAddBtn বাদ দেওয়া হলো
 
 // === State ===
 let activeCategoryId = 'all';
-let categoryMode = 'local'; // always local to avoid generic "Category"
+let categoryMode = 'local';
 let allPlantsCache = [];
 const cart = {};
 let lastDetail = null;
@@ -34,7 +34,6 @@ function setActiveButton(id) {
 // === Init flow ===
 init();
 async function init() {
-    // ⬇️ show global spinner while first load
     showSpinner(true);
     try {
         const resP = await fetch(API_ALL_PLANTS);
@@ -46,7 +45,6 @@ async function init() {
         showSpinner(false);
     }
 
-    // Build local categories from plant data (fixes the "Category" labels)
     const localNames = Array.from(
         new Set(allPlantsCache.map(p => (p.category || p.type || '').trim()).filter(Boolean))
     );
@@ -64,7 +62,7 @@ async function init() {
     renderCards(allPlantsCache);
 }
 
-// === Render categories (safe label) ===
+// === Render categories ===
 function renderCategories(list) {
     const labelOf = (c) =>
         (c?.category && String(c.category).trim()) ||
@@ -88,7 +86,6 @@ function renderCategories(list) {
 async function onCategoryClick(c) {
     setActiveButton(String(c.id));
     if (c.id === 'all') { renderCards(allPlantsCache); return; }
-    // local filter by category name
     const name = c.category;
     const list = allPlantsCache.filter(p => (p.category || p.type) === name);
     renderCards(list);
@@ -132,7 +129,6 @@ function renderCards(list) {
 // === Modal ===
 async function openDetailModal(id, fallback) {
     modalTitle.textContent = 'Loading...';
-    // ⬇️ Three-dot loader inside modal
     modalBody.innerHTML = `
     <div class="py-6 flex items-center justify-center">
       <div class="flex space-x-2">
@@ -178,7 +174,7 @@ async function openDetailModal(id, fallback) {
 function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
 modalClose.onclick = closeModal;
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-modalAddBtn.onclick = () => { if (lastDetail) { addToCart(lastDetail.id, lastDetail); closeModal(); } };
+// ❌ modalAddBtn.onclick অংশ বাদ দেওয়া হলো
 
 // === Cart ===
 function addToCart(id, item) { if (!cart[id]) cart[id] = { ...item, qty: 0 }; cart[id].qty++; renderCart(); }
